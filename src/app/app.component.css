@@ -1,0 +1,32 @@
+main {
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  display: block;
+}
+
+img.thumbnail
+{
+  width: 120px;
+  height: 80px;
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+
+img.shadow
+{
+  box-shadow: 10px 10px 5px #888888;
+}
+
+figure {
+    margin: 1em 0px;
+}
+
+
+
+p{
+  font-size: 20px;
+}
+

@@ -1,0 +1,18 @@
+
+<div class="card">
+    <div class="card-title"  *ngIf="bandInput.rating > 3">
+        <h5 class="card-title" > 
+            {{ bandInput.name }}
+        </h5>
+    </div>
+    <div class="card-content" *ngIf="bandInput.rating > 3">
+        <section>
+            <figure>
+                <img src="{{ bandInput.image }}" [ngClass]="['thumbnail','shadow']" />              
+            </figure>
+            <button class="btn" (click)="onPlayVideo($event)">Play Video</button>           
+        </section>
+
+    </div>
+</div>
+

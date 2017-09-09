@@ -1,0 +1,8 @@
+<div *ngIf="selectedBandInput" class="c">
+    <h4>{{selectedBandInput.name}}</h4>
+</div>
+
+<div class="col-lg-1 col-centered" *ngIf="selectedBandInput">
+    <iframe class="e2e-iframe-trusted-src"  id="video" width="600" height="300" >{{playSelectedBand(selectedBandInput)}}</iframe>
+</div>   
+
