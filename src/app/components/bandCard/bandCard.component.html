@@ -8,7 +8,7 @@
     <div class="card-content" *ngIf="bandInput.rating > 3">
         <section>
             <figure>
-                <img src="{{ bandInput.image }}" [ngClass]="['thumbnail','shadow']" />              
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" [ngClass]="['thumbnail','shadow']" [imgSource]=" bandInput.image " />              
             </figure>
             <button class="btn" (click)="onPlayVideo($event)">Play Video</button>           
         </section>

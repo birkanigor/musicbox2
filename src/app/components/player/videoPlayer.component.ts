@@ -1,4 +1,4 @@
-import { Component ,Input } from '@angular/core';
+import { Component ,Input,SimpleChanges,ElementRef } from '@angular/core';
 import BandModel from '../../models/band.model';
 import {DomSanitizer, SafeResourceUrl, SafeUrl} from "@angular/platform-browser";
 
@@ -13,17 +13,28 @@ export class VideoPlayer    {
     selectedBandInput: BandModel;
 
      @Input()
-    selectedVideoUrl : SafeUrl;
+    selectedVideoRating : number;
 
-    constructor() { }
+    videoSource:SafeResourceUrl;
 
-    playSelectedBand(bandModel: BandModel){    
+    constructor(private ref : ElementRef, private sanitizer: DomSanitizer) { }
+
+    ngOnChanges(changes:SimpleChanges){
+
+        console.log("changes.selectedBandInput.currentValue.src",changes.selectedBandInput.currentValue.src);
+
+        this.videoSource=this.sanitizer.bypassSecurityTrustResourceUrl(changes.selectedBandInput.currentValue.src);  
+
+        console.log("changes : ",changes);      
         
-        var videoIframe = <HTMLIFrameElement>document.getElementById("video");
-        
-       // console.log(videoIframe);
-        if(videoIframe.src!=bandModel.src!){            
-            videoIframe.src = bandModel.src;
+        for (let propName in changes) {  
+            let change = changes[propName];
+            console.log(propName.toString(),"change : ",change);
+            /*let curVal  = JSON.stringify(change.currentValue);
+            let prevVal = JSON.stringify(change.previousValue);
+
+                console.log(curVal);
+                console.log(prevVal);*/
         }
-    } 
+    }
 }
