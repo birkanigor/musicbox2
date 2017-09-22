@@ -1,11 +1,11 @@
 
 <div class="container">
-    <top-header></top-header>
+    
     <div class="row" >
         <band-card class="col s3" *ngFor="let band of bands;" [bandInput]="band" (playVideo)="onPlayVideoFromBandCard($event)" >
             {{band.name}}
         </band-card>
     </div>
     <video-player [selectedBandInput]="selectedBand" [selectedVideoRating]="videoRating"  *ngIf="selectedBand"></video-player>
-    <!--<bottom-footer></bottom-footer>-->
+    
 </div>

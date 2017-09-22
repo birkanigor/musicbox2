@@ -1,4 +1,16 @@
-<nav>
+<header>
+
     <h1>{{title.concat( getListName())}}</h1>
-</nav>
+
+    <nav>        
+        <a [routerLink]="'/main'" routerLinkActive="active">Home</a>
+        <a [routerLink]="'/manage'" routerLinkActive="active">Manage</a>
+        <a [routerLink]="['/profile', 123]" routerLinkActive="active" >Profile</a>
+    </nav>
+
+    <div class="profile">
+      <span>User : {{ userName }}</span>
+    </div>
+
+</header>
 

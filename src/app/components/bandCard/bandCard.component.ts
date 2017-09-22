@@ -21,7 +21,5 @@ export class BandCardComponent  {
     onPlayVideo(event: any)
     {
         this.playVideo.emit(this.bandInput);
-    }
-
-    
+    }    
 }

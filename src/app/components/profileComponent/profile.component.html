@@ -1,0 +1,17 @@
+<div class="container">
+
+  <div class="form" >
+      <h2>Set Profile : </h2>
+      <div class="input-field col s6">
+        <input placeholder="Your name" id="first_name" type="text" class="validate" [(ngModel)]="user.name" (keyup.enter)="saveName($event)">
+        <label for="first_name" class="active">Type your first name</label>
+      </div>
+      <div class="input-field col s6">
+        <input placeholder="Your email address" id="email" type="text" class="validate" [(ngModel)]="user.email" (keyup.enter)="saveName($event)" autocomplete="false">
+        <label for="email" class="active">Type your email address</label>
+      </div>
+      <div>
+        <button class="btn" (click)="saveUser($event)">Subscribe</button>
+      </div>
+  </div>
+</div>

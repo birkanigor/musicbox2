@@ -15,6 +15,6 @@ export class ImgSourceDirective {
 
             setTimeout(function () {    
                 currentElement.nativeElement.src=currentImageSrc;
-            }, 2000);
+            }, 1000);
         }
 }
